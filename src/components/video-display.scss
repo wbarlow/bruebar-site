@@ -25,8 +25,12 @@
 
 .displayBezel {
     position: relative;
-    width: 50rem;
-    height: 30rem;
+    width: 24rem;
+    height: 14.4rem;
+    @include medium-screen {
+      width: 50rem;
+      height: 30rem;
+    }
     @include large-screen {
       width: 68rem;
       height: 41rem;
@@ -35,18 +39,32 @@
     border-color: black;
     border-style: solid;    
     border-radius: 80% / 5%; 
-    border-right-width: 2rem;
-    border-left-width: 2rem;
-    border-top-width: 2rem;
-    border-bottom-width: 4rem;
+
+    border-right-width: 1rem;
+    border-left-width: 1rem;
+    border-top-width: 1rem;
+    border-bottom-width: 2rem;
+    
+    @include medium-screen {
+      border-right-width: 2rem;
+      border-left-width: 2rem;
+      border-top-width: 2rem;
+      border-bottom-width: 4rem;  
+    }
+
     text-align: center;
     text-indent: .1em;
   }
 
   .displayContent {
     display: flex;
-    width: 46rem;
-    height: 24rem;
+    width: 22rem;
+    height: 12rem; 
+    @include medium-screen {
+      width: 46rem;
+      height: 24rem;
+    }
+
     @include large-screen {
       width: 64rem;
       height: 35rem;        
@@ -66,11 +84,16 @@
     position: relative;  
     margin: -2rem;
     border-style: solid;
-    border-bottom: 12rem solid black;
+    
     border-left: 2rem solid transparent;
     border-right: 2rem solid transparent;
     height: 0;
-    width: 25rem;
+    border-bottom: 8rem solid black;
+    width: 15rem;
+    @include medium-screen {
+      border-bottom: 12rem solid black;
+      width: 25rem;
+    }
     z-index: -1;
   }
 
@@ -84,7 +107,10 @@
     text-decoration: none;
     font-family: Pacifico;
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    @include medium-screen {
+      font-size: 2rem;
+    }
     z-index: inherit;
   }
 
