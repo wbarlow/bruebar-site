@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import DisplayButtons from "./display-buttons"
-import containerStyles from "./video-display.module.css"
+import "./video-display.scss"
 
 // VideoDisplay 
 // props:
@@ -16,24 +16,28 @@ class VideoDisplay extends React.Component {
 
     render() {
         return(
-            <div className={containerStyles.display}>
-                <div className={containerStyles.displayBezel}>
-                    <div> {this.props.children} </div>
-                    <div class="flex-container" className={containerStyles.displayBezel__namesContainer}>
+            <div className="display">
+                <div className="displayBezel">
+                    <div className="displayContent"> 
+                        <img className="fill"
+                            src={this.props.image}
+                            alt="display">
+                        </img> 
+                    </div>
+                    <div className="displayNames">
                         {
                         [...this.props.names.keys()].map((name) => {
                             console.log(name)
                             return (
                                 <a href={this.props.names.get(name)}
-                                   style={{padding: `0 1.0875rem 1.45rem`}}
-                                className={containerStyles.displayBezel__names}>{name}
+                                className="displayBezel__names">{name}
                                 </a>
                             )
                             })
                         }
                     </div>
                 </div>
-                <div className={containerStyles.displayStand}>
+                <div className="displayStand">
                 </div>
             </div>
         )
@@ -43,7 +47,7 @@ class VideoDisplay extends React.Component {
 
 VideoDisplay.propTypes = {
     names: PropTypes.object,
-  }
+}
   
 
 export default VideoDisplay;

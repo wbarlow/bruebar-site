@@ -1,3 +1,21 @@
+
+@mixin xsmall-screen {
+  @media (max-width: 599px) { @content; }
+}
+@mixin small-screen {
+  @media (min-width: 600px) { @content; }
+}
+@mixin medium-screen {
+  @media (min-width: 900px) { @content; }
+}
+@mixin large-screen {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin xlarge-screen {
+  @media (min-width: 1800px) { @content; }
+}
+
+
 .display {
     display: flex;
     flex-direction: column;
@@ -7,8 +25,13 @@
 
 .displayBezel {
     position: relative;
-    width: 75rem;
-    height: 45rem;    
+    width: 50rem;
+    height: 30rem;
+    @include large-screen {
+      width: 68rem;
+      height: 41rem;
+    }
+        
     border-color: black;
     border-style: solid;    
     border-radius: 80% / 5%; 
@@ -18,7 +41,24 @@
     border-bottom-width: 4rem;
     text-align: center;
     text-indent: .1em;
-    background-color: gray;
+  }
+
+  .displayContent {
+    display: flex;
+    width: 46rem;
+    height: 24rem;
+    @include large-screen {
+      width: 64rem;
+      height: 35rem;        
+    }    
+    padding-bottom: 4.4rem;
+    z-index: -1;
+
+  }
+
+  .fill {
+    margin: 0 0 -4.4rem;
+    object-fit: cover;
   }
 
   .displayStand {
@@ -34,8 +74,9 @@
     z-index: -1;
   }
 
-  .displayBezel__namesContainer {
-    margin-top: 37rem;
+  .displayNames {
+    margin-top: .5rem;
+    display: block;
   }
 
   .displayBezel__names {
@@ -44,6 +85,7 @@
     font-family: Pacifico;
     font-weight: 100;
     font-size: 2rem;
+    z-index: inherit;
   }
 
     

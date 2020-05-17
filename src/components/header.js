@@ -6,14 +6,14 @@ const Header = ({ siteTitle }) => (
   <header
     style={{
       background: `DarkSlateGray`,
-      marginBottom: `1.45rem`,
+      marginBottom: `1.3rem`,
     }}
   >
     <div
       style={{
         margin: `0 auto`,
         textAlign: `center`,
-        padding: `1.45rem 1.0875rem`, 
+        padding: `1rem 1rem`, 
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
             fontFamily: `Modak`,
             fontWeight: 100,
-            fontSize: `5rem`,
+            fontSize: `4rem`,
           }}
         >
           {siteTitle}

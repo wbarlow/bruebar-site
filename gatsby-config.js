@@ -5,6 +5,7 @@ module.exports = {
     description: `Sandra & Wayne's Site`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
