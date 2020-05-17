@@ -10,7 +10,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Modak']
+          families: ['Modak', 'Pacifico']
         }
       }
     },
@@ -33,6 +33,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/bruebar-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "bruebar.net",
+        acl: null
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

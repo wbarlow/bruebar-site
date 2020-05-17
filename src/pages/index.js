@@ -4,13 +4,28 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
+import VideoDisplay from "../components/video-display"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
+const IndexPage = () => {
 
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  let names = new Map([
+    [ 'Wayne', 'https://www.linkedin.com/in/wayne-barlow-47119815/'],
+    [ 'Sandra', 'https://www.linkedin.com/in/sandra-bruening-121156a/']]);
+  
+    return (
+      <Layout>
+        <SEO title="Home" />
+
+        <div>
+        <VideoDisplay names={ names }>
+          <div>
+            <h1>Welcome!</h1>
+          </div>
+        </VideoDisplay>
+        </div>
+        <Link to="/page-2/">Go to page 2</Link>
+      </Layout>
+    )
+  }
 
 export default IndexPage
