@@ -18,8 +18,8 @@ class VideoDisplay extends React.Component {
         return(
             <div className="display">
                 <div className="displayBezel">
-                    <div className="displayContent"> 
-                        <img className="fill"
+                    <div className="displayContent">  
+                        <img className="noise-image"
                             src={this.props.image}
                             alt="display">
                         </img> 
